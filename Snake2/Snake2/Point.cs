@@ -14,13 +14,18 @@ namespace Snake2
 
         public Point()
         {
-
         }
         public Point(int x, int y, char sym)
         {
             this.x = x;
             this.y = y;
             this.sym = sym;
+        }
+        public Point(Point p)
+        {
+            x = p.x;
+            y = p.y;
+            sym = p.sym;
         }
 
         public void Draw()
@@ -30,14 +35,22 @@ namespace Snake2
         }
 
 
-        public static void Move(Point p, int dx, int dy)
+        public void Move(int offset, DIrection direction)
         {
-            p.x = p.x + dx;
-            p.y = p.y + dy;
+            if (direction == DIrection.Right)
+                x = x + offset;
+            else if (direction == DIrection.Left)
+                x = x - offset;
+            else if (direction == DIrection.Up)
+                y = y - offset;
+            else if (direction == DIrection.Down)
+                y = y + offset;
         }
-        public static void Reset(Point p)
+
+        public override string ToString()
         {
-            p = new Point();
+            return x+", " + y + ", " + sym;
         }
+
     }
 }

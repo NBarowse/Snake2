@@ -25,7 +25,8 @@ namespace Snake2
             
             //создаем точку
             Point p = new Point(4, 5, '*');
-            p.Draw();
+            Snake snake = new Snake(p, 4, DIrection.Right);
+            snake.Draw();
 
         }
     }
