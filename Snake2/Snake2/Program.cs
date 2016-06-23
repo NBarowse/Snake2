@@ -20,6 +20,11 @@ namespace Snake2
             List<Point> pList = new List<Point>();
             pList.Add(p1);
             pList.Add(p2);
+
+           /* Point p3 = new Point(6, 7, '@');
+            Point.Move(p3, 10, 10); //p3 измениться
+            Point.Reset(p3); */ //p3 останется без изменений
+
         }
     }
 }
