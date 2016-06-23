@@ -17,9 +17,11 @@ namespace Snake2
             Point p2 = new Point(4, 5, '#');
             p2.Draw();
 
-            List<Point> pList = new List<Point>();
-            pList.Add(p1);
-            pList.Add(p2);
+            HorizontalLine HorizLine = new HorizontalLine(4, 10, 7, '@');
+            HorizLine.Draw();
+
+            VerticalLine VerticLine = new VerticalLine(4,8, 15, '+');
+            VerticLine.Draw();
 
            /* Point p3 = new Point(6, 7, '@');
             Point.Move(p3, 10, 10); //p3 измениться
