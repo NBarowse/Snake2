@@ -33,8 +33,6 @@ namespace Snake2
             Console.SetCursorPosition(x, y);
             Console.Write(sym);
         }
-
-
         public void Move(int offset, DIrection direction)
         {
             if (direction == DIrection.Right)
@@ -46,7 +44,11 @@ namespace Snake2
             else if (direction == DIrection.Down)
                 y = y + offset;
         }
-
+        public void Clear()
+        {            
+            sym = ' ';
+            Draw();
+        }
         public override string ToString()
         {
             return x+", " + y + ", " + sym;
