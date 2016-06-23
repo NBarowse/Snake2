@@ -9,10 +9,10 @@ namespace Snake2
     class VerticalLine
     {
                List<Point> pList;
-               public VerticalLine(int yLeft, int yRight, int x, char sym)
+               public VerticalLine(int yUp, int yDown, int x, char sym)
         {
             pList = new List<Point>();
-            for (int i=yLeft;i<=yRight;i++)
+            for (int i=yUp;i<=yDown;i++)
             {
                 Point p = new Point(x, i, sym);
                 pList.Add(p);
