@@ -14,15 +14,8 @@ namespace Snake2
 
             Console.SetBufferSize(80, 25); //устанавливаем границы консоли
 
-            //отрисовываем рамочку
-            HorizontalLine upLine = new HorizontalLine(0,78, 0, '+');
-            HorizontalLine downLine = new HorizontalLine(0, 78, 24, '+');
-            VerticalLine leftLine = new VerticalLine(0, 24, 0, '+');
-            VerticalLine rigthLine = new VerticalLine(0, 24, 78, '+');
-            upLine.Draw();
-            downLine.Draw();
-            leftLine.Draw();
-            rigthLine.Draw();       
+            Walls walls = new Walls(80, 25);
+            walls.Draw();      
             
             //создаем точку
             Point p = new Point(4, 5, '*');
@@ -35,6 +28,10 @@ namespace Snake2
 
             while(true)
             {
+                if(walls.IsHit(snake) || snake.IsHitTail())
+                {
+                    break;
+                }
                 if(snake.Eat(food))
                 {
                     food = foodCreator.CreateFood();
@@ -54,7 +51,8 @@ namespace Snake2
                 }
               
             }
-
+            Console.WriteLine("Game is Over");
+            Console.ReadKey();
         }
     }
 }
